@@ -8,19 +8,23 @@ import { Franchise, Lead } from "./lib/mock-data";
 import { Toaster } from "./components/ui/sonner";
 import { ThemeProvider } from "./lib/theme-context";
 
-type View = 'landing' | 'chat' | 'dashboard' | 'lead-detail';
+type View = "landing" | "chat" | "dashboard" | "lead-detail";
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<View>('landing');
-  const [selectedFranchise, setSelectedFranchise] = useState<Franchise | null>(null);
-  const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
+  const [currentView, setCurrentView] =
+    useState<View>("landing");
+  const [selectedFranchise, setSelectedFranchise] =
+    useState<Franchise | null>(null);
+  const [selectedLead, setSelectedLead] = useState<Lead | null>(
+    null,
+  );
 
   const handleGetStarted = () => {
-    setCurrentView('chat');
+    setCurrentView("chat");
   };
 
   const handleGoToDashboard = () => {
-    setCurrentView('dashboard');
+    setCurrentView("dashboard");
   };
 
   const handleViewFranchise = (franchise: Franchise) => {
@@ -33,43 +37,46 @@ export default function App() {
 
   const handleViewLead = (lead: Lead) => {
     setSelectedLead(lead);
-    setCurrentView('lead-detail');
+    setCurrentView("lead-detail");
   };
 
   const handleBackFromLead = () => {
     setSelectedLead(null);
-    setCurrentView('dashboard');
+    setCurrentView("dashboard");
   };
 
   return (
     <ThemeProvider>
       <div className="min-h-screen">
         {/* Main Content */}
-        {currentView === 'landing' && (
-          <LandingPage 
-            onGetStarted={handleGetStarted} 
+        {currentView === "landing" && (
+          <LandingPage
+            onGetStarted={handleGetStarted}
             onGoToDashboard={handleGoToDashboard}
           />
         )}
 
-        {currentView === 'chat' && (
-          <ChatInterface 
+        {currentView === "chat" && (
+          <ChatInterface
             onViewFranchise={handleViewFranchise}
             onGoToDashboard={handleGoToDashboard}
-            onGoToHome={() => setCurrentView('landing')}
+            onGoToHome={() => setCurrentView("landing")}
           />
         )}
 
-        {currentView === 'dashboard' && (
-          <Dashboard 
+        {currentView === "dashboard" && (
+          <Dashboard
             onViewLead={handleViewLead}
-            onGoToConversation={() => setCurrentView('chat')}
-            onGoToHome={() => setCurrentView('landing')}
+            onGoToConversation={() => setCurrentView("chat")}
+            onGoToHome={() => setCurrentView("landing")}
           />
         )}
 
-        {currentView === 'lead-detail' && selectedLead && (
-          <LeadDetailView lead={selectedLead} onBack={handleBackFromLead} />
+        {currentView === "lead-detail" && selectedLead && (
+          <LeadDetailView
+            lead={selectedLead}
+            onBack={handleBackFromLead}
+          />
         )}
 
         {/* Franchise Detail Modal */}
