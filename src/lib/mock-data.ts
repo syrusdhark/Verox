@@ -29,6 +29,14 @@ export interface Message {
   timestamp: Date;
 }
 
+export interface Conversation {
+  id: string;
+  title: string;
+  messages: Message[];
+  lastMessage: Date;
+  preview: string;
+}
+
 export interface Lead {
   id: string;
   name: string;
@@ -262,4 +270,35 @@ export const conversionTrendData = [
   { week: 'Week 4', leads: 63, conversions: 19 },
   { week: 'Week 5', leads: 58, conversions: 17 },
   { week: 'Week 6', leads: 71, conversions: 22 },
+];
+
+export const mockConversations: Conversation[] = [
+  {
+    id: '1',
+    title: 'Food Franchise Opportunities',
+    messages: [],
+    lastMessage: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+    preview: 'Looking for food franchise options with good ROI...',
+  },
+  {
+    id: '2',
+    title: 'Healthcare Investment',
+    messages: [],
+    lastMessage: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
+    preview: 'Interested in healthcare franchises with low investment...',
+  },
+  {
+    id: '3',
+    title: 'Fitness Franchise Research',
+    messages: [],
+    lastMessage: new Date(Date.now() - 3 * 24 * 60 * 60 * 1000), // 3 days ago
+    preview: 'What are the best fitness franchises in 2025?',
+  },
+  {
+    id: '4',
+    title: 'Quick Service Restaurants',
+    messages: [],
+    lastMessage: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000), // 1 week ago
+    preview: 'Tell me about QSR franchise opportunities...',
+  },
 ];
