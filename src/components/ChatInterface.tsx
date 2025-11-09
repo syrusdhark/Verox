@@ -150,7 +150,7 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
   };
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-950 overflow-hidden">
+    <div className="flex h-screen bg-background overflow-hidden">
       {/* Mobile Menu Overlay */}
       {showMenu && (
         <div 
@@ -161,9 +161,9 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
 
       {/* Fixed Left Sidebar */}
       <div className={`${showMenu ? 'fixed inset-y-0 left-0 z-50 w-64' : 'hidden'} lg:block lg:relative lg:w-64 flex-shrink-0`}>
-        <div className="flex flex-col h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
+        <div className="flex flex-col h-full bg-card border-r border-border">
           {/* Header */}
-          <div className="p-4 border-b border-gray-200 dark:border-gray-800">
+          <div className="p-4 border-b border-border">
             <div className="flex items-center justify-between mb-4">
               <div 
                 className="flex items-center gap-2 cursor-pointer"
@@ -239,28 +239,28 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
                     onClick={() => handleSelectConversation(conv)}
                     className={`group relative px-3 py-2 rounded-lg cursor-pointer transition-colors ${
                       currentConversationId === conv.id
-                        ? 'bg-gray-100 dark:bg-gray-800'
-                        : 'hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                        ? 'bg-accent'
+                        : 'hover:bg-accent/50'
                     }`}
                   >
-                    <div className="flex items-start gap-2">
-                      <MessageSquare className="w-4 h-4 text-gray-400 dark:text-gray-600 mt-0.5 flex-shrink-0" />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-sm text-gray-900 dark:text-gray-100 truncate">
+                    <div className="flex items-start gap-2 min-w-0">
+                      <MessageSquare className="w-4 h-4 text-muted-foreground mt-0.5 flex-shrink-0" />
+                      <div className="flex-1 min-w-0 overflow-hidden">
+                        <div className="text-sm text-foreground truncate">
                           {conv.title}
                         </div>
-                        <div className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                        <div className="text-xs text-muted-foreground truncate">
                           {conv.preview}
                         </div>
-                        <div className="text-xs text-gray-400 dark:text-gray-600 mt-1">
+                        <div className="text-xs text-muted-foreground mt-1">
                           {formatTimeAgo(conv.lastMessage)}
                         </div>
                       </div>
                       <button
                         onClick={(e) => handleDeleteConversation(conv.id, e)}
-                        className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
+                        className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-accent rounded flex-shrink-0"
                       >
-                        <Trash2 className="w-3 h-3 text-gray-500" />
+                        <Trash2 className="w-3 h-3 text-muted-foreground" />
                       </button>
                     </div>
                   </div>
@@ -277,7 +277,7 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
         <ResizablePanel defaultSize={selectedFranchise ? 60 : 100} minSize={40}>
           <div className="flex flex-col h-full">
             {/* Top Bar */}
-            <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 py-3">
+            <div className="bg-background border-b border-border px-4 py-3">
               <div className="flex items-center justify-between max-w-4xl mx-auto">
                 <div className="flex items-center gap-3">
                   <button 
@@ -438,7 +438,7 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
             </ScrollArea>
 
             {/* Input Area */}
-            <div className="border-t border-gray-200 dark:border-gray-800 px-4 py-4">
+            <div className="border-t border-border px-4 py-4">
               <div className="max-w-4xl mx-auto">
                 <div className="relative flex items-center gap-2">
                   <Input
@@ -467,7 +467,7 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
           <>
             <ResizableHandle withHandle className="hidden lg:flex" />
             <ResizablePanel defaultSize={30} minSize={25} maxSize={40} className="hidden lg:block">
-              <div className="h-full bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800">
+              <div className="h-full bg-card border-l border-border">
                 <ScrollArea className="h-full">
                   <div className="space-y-6 p-6">
                     {/* Close Button */}
@@ -654,7 +654,7 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
 
       {/* Mobile Overlay for Franchise Details */}
       {selectedFranchise && (
-        <div className="lg:hidden fixed inset-0 z-50 bg-white dark:bg-gray-900">
+        <div className="lg:hidden fixed inset-0 z-50 bg-background">
           <ScrollArea className="h-full">
             <div className="space-y-6 p-6">
               {/* Close Button */}
