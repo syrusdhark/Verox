@@ -97,13 +97,13 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
     <div className="flex flex-col md:flex-row h-full overflow-hidden">
       {/* Conversations List */}
       <div className={`
-        w-full md:w-80 lg:w-96 border-r border-gray-200 dark:border-gray-700 flex flex-col bg-white dark:bg-gray-800
+        w-full md:w-80 lg:w-96 border-r border-border flex flex-col bg-card
         ${showMobileConversation ? 'hidden md:flex' : 'flex'}
       `}>
-        <div className="p-4 border-b border-gray-200 dark:border-gray-700 shrink-0">
-          <h2 className="text-gray-900 dark:text-gray-100 mb-3">Messages</h2>
+        <div className="p-4 border-b border-border shrink-0">
+          <h2 className="text-foreground mb-3">Messages</h2>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
               placeholder="Search conversations..."
               value={searchQuery}
@@ -121,29 +121,29 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
                 onClick={() => handleSelectConversation(conv)}
                 className={`w-full p-3 rounded-lg cursor-pointer transition-colors text-left ${
                   selectedConversation?.id === conv.id
-                    ? 'bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600'
-                    : 'hover:bg-gray-50 dark:hover:bg-gray-700'
+                    ? 'bg-accent border border-border'
+                    : 'hover:bg-accent/50'
                 }`}
               >
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 min-w-0">
                   <Avatar className="shrink-0">
                     <AvatarFallback>
                       {conv.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>
                   </Avatar>
-                  <div className="flex-1 min-w-0">
+                  <div className="flex-1 min-w-0 overflow-hidden">
                     <div className="flex items-center justify-between mb-1 gap-2">
-                      <span className="text-sm text-gray-900 dark:text-gray-100 truncate">
+                      <span className="text-sm text-foreground truncate">
                         {conv.name}
                       </span>
-                      <span className="text-xs text-gray-500 dark:text-gray-400 shrink-0">
+                      <span className="text-xs text-muted-foreground shrink-0">
                         {new Date(conv.timestamp).toLocaleTimeString([], { 
                           hour: '2-digit', 
                           minute: '2-digit' 
                         })}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 truncate mb-2">
+                    <p className="text-xs text-muted-foreground truncate mb-2">
                       {conv.lastMessage}
                     </p>
                     <Badge className={`${getQualityBadge(conv.quality)} text-xs`}>
@@ -160,11 +160,11 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
       {/* Conversation View */}
       {selectedConversation ? (
         <div className={`
-          flex-1 flex flex-col bg-gray-50 dark:bg-gray-900
+          flex-1 flex flex-col bg-background
           ${showMobileConversation ? 'flex' : 'hidden md:flex'}
         `}>
           {/* Conversation Header */}
-          <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 py-3 shrink-0">
+          <div className="bg-card border-b border-border px-4 py-3 shrink-0">
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-3 min-w-0">
                 <Button
@@ -180,9 +180,9 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
                     {selectedConversation.name.split(' ').map(n => n[0]).join('')}
                   </AvatarFallback>
                 </Avatar>
-                <div className="min-w-0">
-                  <h3 className="text-gray-900 dark:text-gray-100 truncate">{selectedConversation.name}</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 truncate">
+                <div className="min-w-0 overflow-hidden">
+                  <h3 className="text-foreground truncate">{selectedConversation.name}</h3>
+                  <p className="text-sm text-muted-foreground truncate">
                     {selectedConversation.franchise}
                   </p>
                 </div>
@@ -239,8 +239,8 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
                   className={`flex gap-2 ${message.type === 'user' ? 'flex-row-reverse' : 'flex-row'}`}
                 >
                   {message.type === 'ai' && (
-                    <div className="w-8 h-8 bg-gray-900 dark:bg-gray-100 rounded-full flex items-center justify-center shrink-0">
-                      <Sparkles className="w-4 h-4 text-white dark:text-gray-900" />
+                    <div className="w-8 h-8 bg-foreground rounded-full flex items-center justify-center shrink-0">
+                      <Sparkles className="w-4 h-4 text-background" />
                     </div>
                   )}
                   
@@ -248,13 +248,13 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
                     <div
                       className={`rounded-2xl px-4 py-3 ${
                         message.type === 'user'
-                          ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
-                          : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 shadow-sm'
+                          ? 'bg-foreground text-background'
+                          : 'bg-card text-foreground shadow-sm'
                       }`}
                     >
                       <p className="text-sm leading-relaxed">{message.content}</p>
                     </div>
-                    <span className={`text-xs text-gray-500 dark:text-gray-400 px-1 ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
+                    <span className={`text-xs text-muted-foreground px-1 ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
                       {message.timestamp.toLocaleTimeString([], { 
                         hour: '2-digit', 
                         minute: '2-digit' 
@@ -267,7 +267,7 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
           </div>
 
           {/* Message Input */}
-          <div className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 p-4 md:p-6 shrink-0">
+          <div className="bg-card border-t border-border p-4 md:p-6 shrink-0">
             <div className="max-w-3xl mx-auto">
               <div className="flex gap-2">
                 <Input
@@ -280,7 +280,7 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
                 <Button 
                   onClick={handleSendMessage}
                   disabled={!messageInput.trim()}
-                  className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900 shrink-0"
+                  className="bg-foreground hover:bg-foreground/90 text-background shrink-0"
                   size="icon"
                 >
                   <Send className="w-4 h-4" />
@@ -290,12 +290,12 @@ export function MessagesScreen({ onViewLead }: MessagesScreenProps) {
           </div>
         </div>
       ) : (
-        <div className="flex-1 hidden md:flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+        <div className="flex-1 hidden md:flex items-center justify-center bg-background">
           <div className="text-center">
-            <div className="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Sparkles className="w-8 h-8 text-gray-400 dark:text-gray-500" />
+            <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
+              <Sparkles className="w-8 h-8 text-muted-foreground" />
             </div>
-            <p className="text-gray-500 dark:text-gray-400">Select a conversation to view messages</p>
+            <p className="text-muted-foreground">Select a conversation to view messages</p>
           </div>
         </div>
       )}

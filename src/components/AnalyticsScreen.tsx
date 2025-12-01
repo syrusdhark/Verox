@@ -63,70 +63,70 @@ export function AnalyticsScreen() {
   return (
     <div className="p-6 space-y-6 max-w-7xl mx-auto">
       <div>
-        <h1 className="text-2xl text-gray-900 dark:text-gray-100 mb-2">Analytics</h1>
-        <p className="text-gray-600 dark:text-gray-400">Comprehensive insights into your franchise lead performance</p>
+        <h1 className="text-2xl text-foreground mb-2">Analytics</h1>
+        <p className="text-muted-foreground">Comprehensive insights into your franchise lead performance</p>
       </div>
 
       {/* Key Metrics */}
       <div className="grid md:grid-cols-4 gap-6">
-        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
+            <CardTitle className="text-sm text-muted-foreground flex items-center gap-2">
               <Users className="w-4 h-4" />
               Total Leads (6M)
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl text-gray-900 dark:text-gray-100 mb-1">337</div>
-            <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-3xl text-foreground mb-1">337</div>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
               <TrendingUp className="w-3 h-3" />
               <span>+18.2% vs last period</span>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
+            <CardTitle className="text-sm text-muted-foreground flex items-center gap-2">
               <Target className="w-4 h-4" />
               Conversion Rate
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl text-gray-900 dark:text-gray-100 mb-1">23.5%</div>
-            <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-3xl text-foreground mb-1">23.5%</div>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
               <TrendingUp className="w-3 h-3" />
               <span>+5.3% vs last period</span>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
+            <CardTitle className="text-sm text-muted-foreground flex items-center gap-2">
               <DollarSign className="w-4 h-4" />
               Revenue Generated
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl text-gray-900 dark:text-gray-100 mb-1">$1.2M</div>
-            <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-3xl text-foreground mb-1">$1.2M</div>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
               <TrendingUp className="w-3 h-3" />
               <span>+24.1% vs last period</span>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+        <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
+            <CardTitle className="text-sm text-muted-foreground flex items-center gap-2">
               <Calendar className="w-4 h-4" />
               Avg. Time to Close
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl text-gray-900 dark:text-gray-100 mb-1">18 days</div>
-            <div className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-3xl text-foreground mb-1">18 days</div>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
               <TrendingUp className="w-3 h-3 rotate-180" />
               <span>-2 days vs last period</span>
             </div>
@@ -136,7 +136,7 @@ export function AnalyticsScreen() {
 
       {/* Main Analytics */}
       <Tabs defaultValue="overview" className="space-y-4">
-        <TabsList className="bg-gray-100 dark:bg-gray-800">
+        <TabsList className="bg-muted">
           <TabsTrigger value="overview">Overview</TabsTrigger>
           <TabsTrigger value="sources">Lead Sources</TabsTrigger>
           <TabsTrigger value="geographic">Geographic</TabsTrigger>
@@ -145,7 +145,7 @@ export function AnalyticsScreen() {
 
         <TabsContent value="overview" className="space-y-6">
           <div className="grid lg:grid-cols-2 gap-6">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle>Monthly Performance</CardTitle>
               </CardHeader>
@@ -185,7 +185,7 @@ export function AnalyticsScreen() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle>Revenue Trend</CardTitle>
               </CardHeader>
@@ -206,7 +206,7 @@ export function AnalyticsScreen() {
             </Card>
           </div>
 
-          <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card>
             <CardHeader>
               <CardTitle>Conversion Funnel</CardTitle>
             </CardHeader>
@@ -214,47 +214,47 @@ export function AnalyticsScreen() {
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Total Leads</span>
-                    <span className="text-sm text-gray-900 dark:text-gray-100">337 (100%)</span>
+                    <span className="text-sm text-muted-foreground">Total Leads</span>
+                    <span className="text-sm text-foreground">337 (100%)</span>
                   </div>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
-                    <div className="bg-gray-900 dark:bg-gray-100 h-3 rounded-full" style={{ width: '100%' }}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Qualified</span>
-                    <span className="text-sm text-gray-900 dark:text-gray-100">244 (72%)</span>
-                  </div>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
-                    <div className="bg-gray-900 dark:bg-gray-100 h-3 rounded-full" style={{ width: '72%' }}></div>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div className="bg-foreground h-3 rounded-full" style={{ width: '100%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Interested</span>
-                    <span className="text-sm text-gray-900 dark:text-gray-100">142 (42%)</span>
+                    <span className="text-sm text-muted-foreground">Qualified</span>
+                    <span className="text-sm text-foreground">244 (72%)</span>
                   </div>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
-                    <div className="bg-gray-900 dark:bg-gray-100 h-3 rounded-full" style={{ width: '42%' }}></div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Negotiating</span>
-                    <span className="text-sm text-gray-900 dark:text-gray-100">99 (29%)</span>
-                  </div>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
-                    <div className="bg-gray-900 dark:bg-gray-100 h-3 rounded-full" style={{ width: '29%' }}></div>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div className="bg-foreground h-3 rounded-full" style={{ width: '72%' }}></div>
                   </div>
                 </div>
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Closed</span>
-                    <span className="text-sm text-gray-900 dark:text-gray-100">79 (23.5%)</span>
+                    <span className="text-sm text-muted-foreground">Interested</span>
+                    <span className="text-sm text-foreground">142 (42%)</span>
                   </div>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-3">
-                    <div className="bg-gray-900 dark:bg-gray-100 h-3 rounded-full" style={{ width: '23.5%' }}></div>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div className="bg-foreground h-3 rounded-full" style={{ width: '42%' }}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm text-muted-foreground">Negotiating</span>
+                    <span className="text-sm text-foreground">99 (29%)</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div className="bg-foreground h-3 rounded-full" style={{ width: '29%' }}></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm text-muted-foreground">Closed</span>
+                    <span className="text-sm text-foreground">79 (23.5%)</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div className="bg-foreground h-3 rounded-full" style={{ width: '23.5%' }}></div>
                   </div>
                 </div>
               </div>
@@ -264,7 +264,7 @@ export function AnalyticsScreen() {
 
         <TabsContent value="sources" className="space-y-6">
           <div className="grid lg:grid-cols-2 gap-6">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle>Lead Source Distribution</CardTitle>
               </CardHeader>
@@ -289,7 +289,7 @@ export function AnalyticsScreen() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle>Source Performance</CardTitle>
               </CardHeader>
@@ -298,10 +298,10 @@ export function AnalyticsScreen() {
                   {leadSourceData.map((source) => (
                     <div key={source.name}>
                       <div className="flex justify-between mb-2">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{source.name}</span>
-                        <span className="text-sm text-gray-900 dark:text-gray-100">{source.value}%</span>
+                        <span className="text-sm text-muted-foreground">{source.name}</span>
+                        <span className="text-sm text-foreground">{source.value}%</span>
                       </div>
-                      <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+                      <div className="w-full bg-muted rounded-full h-2">
                         <div 
                           className="h-2 rounded-full" 
                           style={{ width: `${source.value}%`, backgroundColor: source.color }}
@@ -317,7 +317,7 @@ export function AnalyticsScreen() {
 
         <TabsContent value="geographic" className="space-y-6">
           <div className="grid lg:grid-cols-2 gap-6">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle>Leads by Region</CardTitle>
               </CardHeader>
@@ -338,22 +338,22 @@ export function AnalyticsScreen() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle>Regional Breakdown</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
                   {geographicData.map((region) => (
-                    <div key={region.region} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                    <div key={region.region} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                       <div className="flex items-center gap-3">
                         <div 
                           className="w-3 h-3 rounded-full" 
                           style={{ backgroundColor: region.color }}
                         ></div>
-                        <span className="text-sm text-gray-900 dark:text-gray-100">{region.region}</span>
+                        <span className="text-sm text-foreground">{region.region}</span>
                       </div>
-                      <span className="text-sm text-gray-900 dark:text-gray-100">{region.leads} leads</span>
+                      <span className="text-sm text-foreground">{region.leads} leads</span>
                     </div>
                   ))}
                 </div>
@@ -363,7 +363,7 @@ export function AnalyticsScreen() {
         </TabsContent>
 
         <TabsContent value="activity" className="space-y-6">
-          <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+          <Card>
             <CardHeader>
               <CardTitle>Hourly Activity Pattern</CardTitle>
             </CardHeader>
@@ -388,33 +388,33 @@ export function AnalyticsScreen() {
           </Card>
 
           <div className="grid lg:grid-cols-3 gap-6">
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-base">Peak Hours</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl text-gray-900 dark:text-gray-100 mb-2">2-4 PM</div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Highest lead activity period</p>
+                <div className="text-2xl text-foreground mb-2">2-4 PM</div>
+                <p className="text-sm text-muted-foreground">Highest lead activity period</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-base">Best Day</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl text-gray-900 dark:text-gray-100 mb-2">Tuesday</div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Most qualified leads generated</p>
+                <div className="text-2xl text-foreground mb-2">Tuesday</div>
+                <p className="text-sm text-muted-foreground">Most qualified leads generated</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+            <Card>
               <CardHeader>
                 <CardTitle className="text-base">Response Time</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-2xl text-gray-900 dark:text-gray-100 mb-2">12 min</div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">Average first response time</p>
+                <div className="text-2xl text-foreground mb-2">12 min</div>
+                <p className="text-sm text-muted-foreground">Average first response time</p>
               </CardContent>
             </Card>
           </div>

@@ -8,7 +8,7 @@ import { Message, Franchise, Conversation, conversationStarters, franchises, moc
 import { Badge } from "./ui/badge";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "./ui/resizable";
-import veroLogo from "figma:asset/1a29221577cf591b7faa7cb6c6c272ef9611797d.png";
+import veroLogo from "../assets/veroxlogo-removebg-preview.png";
 
 interface ChatInterfaceProps {
   onViewFranchise: (franchise: Franchise) => void;
@@ -169,10 +169,8 @@ export function ChatInterface({ onViewFranchise, onGoToDashboard, onGoToHome }: 
                 className="flex items-center gap-2 cursor-pointer"
                 onClick={onGoToHome}
               >
-                <div className="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
-                  <img src={veroLogo} alt="VeroX AI" className="w-5 h-5" />
-                </div>
-                <span className="text-gray-900 dark:text-gray-100">VeroX AI</span>
+                <img src={veroLogo} alt="VeroX AI" className="w-8 h-8" />
+                <span className="text-foreground">VeroX AI</span>
               </div>
               <button 
                 className="lg:hidden"

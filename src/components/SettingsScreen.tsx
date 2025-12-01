@@ -33,8 +33,8 @@ export function SettingsScreen() {
   return (
     <div className="p-6 space-y-6">
       <div>
-        <h1 className="text-2xl text-gray-900 dark:text-gray-100 mb-2">Settings</h1>
-        <p className="text-gray-600 dark:text-gray-400">Manage your account settings and preferences</p>
+        <h1 className="text-2xl text-foreground mb-2">Settings</h1>
+        <p className="text-muted-foreground">Manage your account settings and preferences</p>
       </div>
 
       <Tabs defaultValue="profile" className="space-y-4">
@@ -80,7 +80,7 @@ export function SettingsScreen() {
                     <Upload className="w-4 h-4 mr-2" />
                     Upload Photo
                   </Button>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
+                  <p className="text-xs text-muted-foreground mt-2">
                     JPG, PNG or GIF. Max size 2MB.
                   </p>
                 </div>
@@ -119,7 +119,7 @@ export function SettingsScreen() {
                 />
               </div>
 
-              <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+              <Button className="bg-foreground hover:bg-foreground/90 text-background">
                 <Save className="w-4 h-4 mr-2" />
                 Save Changes
               </Button>
@@ -184,7 +184,7 @@ export function SettingsScreen() {
                 <Input id="website" type="url" defaultValue="https://brewmastercoffee.com" />
               </div>
 
-              <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+              <Button className="bg-foreground hover:bg-foreground/90 text-background">
                 <Save className="w-4 h-4 mr-2" />
                 Update Franchise Info
               </Button>
@@ -203,12 +203,12 @@ export function SettingsScreen() {
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
-                <h3 className="text-base text-gray-900 mb-4">Email Notifications</h3>
+                <h3 className="text-base text-foreground mb-4">Email Notifications</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <Label htmlFor="emailLeads" className="text-sm text-gray-900">New Leads</Label>
-                      <p className="text-xs text-gray-500">Get notified when new leads arrive</p>
+                      <Label htmlFor="emailLeads" className="text-sm text-foreground">New Leads</Label>
+                      <p className="text-xs text-muted-foreground">Get notified when new leads arrive</p>
                     </div>
                     <Switch 
                       id="emailLeads"
@@ -221,8 +221,8 @@ export function SettingsScreen() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <Label htmlFor="emailMessages" className="text-sm text-gray-900">New Messages</Label>
-                      <p className="text-xs text-gray-500">Get notified about new messages</p>
+                      <Label htmlFor="emailMessages" className="text-sm text-foreground">New Messages</Label>
+                      <p className="text-xs text-muted-foreground">Get notified about new messages</p>
                     </div>
                     <Switch 
                       id="emailMessages"
@@ -235,8 +235,8 @@ export function SettingsScreen() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <Label htmlFor="emailWeekly" className="text-sm text-gray-900">Weekly Report</Label>
-                      <p className="text-xs text-gray-500">Receive weekly performance summary</p>
+                      <Label htmlFor="emailWeekly" className="text-sm text-foreground">Weekly Report</Label>
+                      <p className="text-xs text-muted-foreground">Receive weekly performance summary</p>
                     </div>
                     <Switch 
                       id="emailWeekly"
@@ -252,12 +252,12 @@ export function SettingsScreen() {
               <Separator />
 
               <div>
-                <h3 className="text-base text-gray-900 mb-4">Push Notifications</h3>
+                <h3 className="text-base text-foreground mb-4">Push Notifications</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <Label htmlFor="pushLeads" className="text-sm text-gray-900">New Leads</Label>
-                      <p className="text-xs text-gray-500">Push notifications for new leads</p>
+                      <Label htmlFor="pushLeads" className="text-sm text-foreground">New Leads</Label>
+                      <p className="text-xs text-muted-foreground">Push notifications for new leads</p>
                     </div>
                     <Switch 
                       id="pushLeads"
@@ -270,8 +270,8 @@ export function SettingsScreen() {
 
                   <div className="flex items-center justify-between">
                     <div>
-                      <Label htmlFor="pushMessages" className="text-sm text-gray-900">New Messages</Label>
-                      <p className="text-xs text-gray-500">Push notifications for messages</p>
+                      <Label htmlFor="pushMessages" className="text-sm text-foreground">New Messages</Label>
+                      <p className="text-xs text-muted-foreground">Push notifications for messages</p>
                     </div>
                     <Switch 
                       id="pushMessages"
@@ -287,12 +287,12 @@ export function SettingsScreen() {
               <Separator />
 
               <div>
-                <h3 className="text-base text-gray-900 mb-4">SMS Notifications</h3>
+                <h3 className="text-base text-foreground mb-4">SMS Notifications</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <Label htmlFor="smsImportant" className="text-sm text-gray-900">Important Updates</Label>
-                      <p className="text-xs text-gray-500">SMS for critical notifications only</p>
+                      <Label htmlFor="smsImportant" className="text-sm text-foreground">Important Updates</Label>
+                      <p className="text-xs text-muted-foreground">SMS for critical notifications only</p>
                     </div>
                     <Switch 
                       id="smsImportant"
@@ -305,7 +305,7 @@ export function SettingsScreen() {
                 </div>
               </div>
 
-              <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+              <Button className="bg-foreground hover:bg-foreground/90 text-background">
                 <Save className="w-4 h-4 mr-2" />
                 Save Preferences
               </Button>
@@ -335,7 +335,7 @@ export function SettingsScreen() {
                 <Label htmlFor="confirmPassword">Confirm New Password</Label>
                 <Input id="confirmPassword" type="password" />
               </div>
-              <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+              <Button className="bg-foreground hover:bg-foreground/90 text-background">
                 Update Password
               </Button>
             </CardContent>
@@ -351,8 +351,8 @@ export function SettingsScreen() {
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-gray-900">Enable 2FA</p>
-                  <p className="text-xs text-gray-500">Require verification code on login</p>
+                  <p className="text-sm text-foreground">Enable 2FA</p>
+                  <p className="text-xs text-muted-foreground">Require verification code on login</p>
                 </div>
                 <Switch />
               </div>
@@ -370,17 +370,17 @@ export function SettingsScreen() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
                 <div>
-                  <p className="text-sm text-gray-900 dark:text-gray-100">MacBook Pro - Chrome</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">San Francisco, CA - Active now</p>
+                  <p className="text-sm text-foreground">MacBook Pro - Chrome</p>
+                  <p className="text-xs text-muted-foreground">San Francisco, CA - Active now</p>
                 </div>
                 <Badge className="bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400">Current</Badge>
               </div>
-              <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+              <div className="flex items-center justify-between p-3 bg-muted rounded-lg">
                 <div>
-                  <p className="text-sm text-gray-900 dark:text-gray-100">iPhone - Safari</p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">San Francisco, CA - 2 hours ago</p>
+                  <p className="text-sm text-foreground">iPhone - Safari</p>
+                  <p className="text-xs text-muted-foreground">San Francisco, CA - 2 hours ago</p>
                 </div>
                 <Button variant="ghost" size="sm">
                   Revoke
@@ -400,20 +400,20 @@ export function SettingsScreen() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="p-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+              <div className="p-4 bg-muted border border-border rounded-lg">
                 <div className="flex items-center justify-between mb-2">
                   <div>
-                    <h3 className="text-lg text-gray-900 dark:text-gray-100">Professional Plan</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Perfect for growing franchises</p>
+                    <h3 className="text-lg text-foreground">Professional Plan</h3>
+                    <p className="text-sm text-muted-foreground">Perfect for growing franchises</p>
                   </div>
-                  <Badge className="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900">Active</Badge>
+                  <Badge className="bg-foreground text-background">Active</Badge>
                 </div>
-                <div className="text-2xl text-gray-900">$99<span className="text-base text-gray-600">/month</span></div>
+                <div className="text-2xl text-foreground">$99<span className="text-base text-muted-foreground">/month</span></div>
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-sm text-gray-900">Plan Features:</h4>
-                <ul className="space-y-1 text-sm text-gray-600">
+                <h4 className="text-sm text-foreground">Plan Features:</h4>
+                <ul className="space-y-1 text-sm text-muted-foreground">
                   <li>• Unlimited leads</li>
                   <li>• AI-powered matching</li>
                   <li>• Advanced analytics</li>
@@ -439,14 +439,14 @@ export function SettingsScreen() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+              <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-8 bg-gray-900 dark:bg-gray-100 rounded flex items-center justify-center">
-                    <CreditCard className="w-5 h-5 text-white dark:text-gray-900" />
+                  <div className="w-12 h-8 bg-foreground rounded flex items-center justify-center">
+                    <CreditCard className="w-5 h-5 text-background" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-900">•••• •••• •••• 4242</p>
-                    <p className="text-xs text-gray-500">Expires 12/25</p>
+                    <p className="text-sm text-foreground">•••• •••• •••• 4242</p>
+                    <p className="text-xs text-muted-foreground">Expires 12/25</p>
                   </div>
                 </div>
                 <Button variant="outline" size="sm">
@@ -473,10 +473,10 @@ export function SettingsScreen() {
                   { date: 'Sep 1, 2025', amount: '$99.00', status: 'Paid' },
                   { date: 'Aug 1, 2025', amount: '$99.00', status: 'Paid' },
                 ].map((invoice, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  <div key={idx} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                     <div>
-                      <p className="text-sm text-gray-900">{invoice.date}</p>
-                      <p className="text-xs text-gray-500">{invoice.amount}</p>
+                      <p className="text-sm text-foreground">{invoice.date}</p>
+                      <p className="text-xs text-muted-foreground">{invoice.amount}</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <Badge className="bg-emerald-100 text-emerald-700">{invoice.status}</Badge>

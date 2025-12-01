@@ -87,9 +87,9 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
   ];
 
   return (
-    <div className="h-screen flex flex-col bg-gray-50 dark:bg-gray-900">
+    <div className="h-screen flex flex-col bg-background">
       {/* Header */}
-      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
+      <div className="bg-card border-b border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="icon" onClick={onBack}>
@@ -101,7 +101,7 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
               </AvatarFallback>
             </Avatar>
             <div>
-              <h1 className="text-xl text-gray-900 dark:text-gray-100">{lead.name}</h1>
+              <h1 className="text-xl text-foreground">{lead.name}</h1>
               <div className="flex items-center gap-2 mt-1">
                 <Badge className={getQualityBadge(lead.quality)}>
                   {lead.quality.toUpperCase()}
@@ -122,7 +122,7 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
               <FileText className="w-4 h-4 mr-2" />
               Send Proposal
             </Button>
-            <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+            <Button className="bg-foreground hover:bg-foreground/90 text-background">
               <CheckCircle className="w-4 h-4 mr-2" />
               Mark as Qualified
             </Button>
@@ -147,13 +147,13 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                     <div
                       className={`rounded-2xl px-4 py-3 ${
                         message.type === 'user'
-                          ? 'bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900'
-                          : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-700'
+                          ? 'bg-foreground text-background'
+                          : 'bg-card text-foreground border border-border'
                       }`}
                     >
                       <p className="text-sm leading-relaxed">{message.content}</p>
                     </div>
-                    <span className={`text-xs text-gray-500 dark:text-gray-400 ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
+                    <span className={`text-xs text-muted-foreground ${message.type === 'user' ? 'text-right' : 'text-left'}`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </span>
                   </div>
@@ -163,15 +163,15 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
           </ScrollArea>
 
           {/* Reply Section */}
-          <div className="border-t border-gray-200 dark:border-gray-700 p-6 bg-white dark:bg-gray-800">
+          <div className="border-t border-border p-6 bg-card">
             <div className="max-w-3xl mx-auto">
               <textarea
                 placeholder="Type your message..."
-                className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full px-4 py-3 border border-border bg-background text-foreground rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-ring"
                 rows={3}
               />
               <div className="flex justify-end mt-3">
-                <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+                <Button className="bg-foreground hover:bg-foreground/90 text-background">
                   <MessageSquare className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>
@@ -181,7 +181,7 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
         </div>
 
         {/* Right Sidebar - Lead Info & AI Analysis */}
-        <div className="w-96 bg-white dark:bg-gray-800 border-l border-gray-200 dark:border-gray-700 overflow-y-auto">
+        <div className="w-96 bg-card border-l border-border overflow-y-auto">
           <div className="p-6 space-y-6">
             {/* Contact Info */}
             <Card>
@@ -190,20 +190,20 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 text-gray-400 dark:text-gray-500" />
-                  <span className="text-sm text-gray-900 dark:text-gray-100">{lead.email}</span>
+                  <Mail className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-foreground">{lead.email}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 text-gray-400 dark:text-gray-500" />
-                  <span className="text-sm text-gray-900 dark:text-gray-100">{lead.phone}</span>
+                  <Phone className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-foreground">{lead.phone}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <DollarSign className="w-4 h-4 text-gray-400 dark:text-gray-500" />
-                  <span className="text-sm text-gray-900 dark:text-gray-100">{lead.budget}</span>
+                  <DollarSign className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-foreground">{lead.budget}</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Calendar className="w-4 h-4 text-gray-400 dark:text-gray-500" />
-                  <span className="text-sm text-gray-900 dark:text-gray-100">{lead.timeline}</span>
+                  <Calendar className="w-4 h-4 text-muted-foreground" />
+                  <span className="text-sm text-foreground">{lead.timeline}</span>
                 </div>
               </CardContent>
             </Card>
@@ -220,7 +220,7 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                 {/* Sentiment */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Sentiment</span>
+                    <span className="text-sm text-muted-foreground">Sentiment</span>
                     <div className="flex items-center gap-2">
                       {getSentimentIcon(lead.sentiment)}
                       <span className={`text-sm ${getSentimentColor(lead.sentiment)}`}>
@@ -233,14 +233,14 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                 {/* Intent Score */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Intent Score</span>
-                    <span className="text-sm text-gray-900 dark:text-gray-100">{lead.intentScore}/100</span>
+                    <span className="text-sm text-muted-foreground">Intent Score</span>
+                    <span className="text-sm text-foreground">{lead.intentScore}/100</span>
                   </div>
-                  <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+                  <div className="w-full bg-muted rounded-full h-2">
                     <div 
                       className={`h-2 rounded-full ${
                         lead.intentScore >= 80 ? 'bg-emerald-600 dark:bg-emerald-500' : 
-                        lead.intentScore >= 60 ? 'bg-amber-600 dark:bg-amber-500' : 'bg-gray-600 dark:bg-gray-500'
+                        lead.intentScore >= 60 ? 'bg-amber-600 dark:bg-amber-500' : 'bg-muted-foreground'
                       }`}
                       style={{ width: `${lead.intentScore}%` }}
                     ></div>
@@ -248,21 +248,21 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                 </div>
 
                 {/* Budget Range Detected */}
-                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <div className="p-3 bg-muted rounded-lg">
                   <div className="flex items-center gap-2 mb-1">
                     <DollarSign className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Budget Range Detected</span>
+                    <span className="text-sm text-foreground">Budget Range Detected</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{lead.budget}</p>
+                  <p className="text-sm text-muted-foreground">{lead.budget}</p>
                 </div>
 
                 {/* Timeline Urgency */}
-                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <div className="p-3 bg-muted rounded-lg">
                   <div className="flex items-center gap-2 mb-1">
                     <Clock className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                    <span className="text-sm text-gray-900 dark:text-gray-100">Timeline Urgency</span>
+                    <span className="text-sm text-foreground">Timeline Urgency</span>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">{lead.timeline}</p>
+                  <p className="text-sm text-muted-foreground">{lead.timeline}</p>
                 </div>
               </CardContent>
             </Card>
@@ -276,8 +276,8 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                 <div className="flex items-start gap-3 p-3 bg-indigo-50 dark:bg-indigo-950 rounded-lg">
                   <TrendingUp className="w-4 h-4 text-indigo-600 dark:text-indigo-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm text-gray-900 dark:text-gray-100">Schedule Discovery Call</p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                    <p className="text-sm text-foreground">Schedule Discovery Call</p>
+                    <p className="text-xs text-muted-foreground mt-1">
                       High intent score suggests they're ready for deeper conversation
                     </p>
                   </div>
@@ -285,8 +285,8 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                 <div className="flex items-start gap-3 p-3 bg-emerald-50 dark:bg-emerald-950 rounded-lg">
                   <FileText className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm text-gray-900 dark:text-gray-100">Send Franchise Disclosure</p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                    <p className="text-sm text-foreground">Send Franchise Disclosure</p>
+                    <p className="text-xs text-muted-foreground mt-1">
                       They've shown interest in {lead.franchise}
                     </p>
                   </div>
@@ -294,8 +294,8 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
                 <div className="flex items-start gap-3 p-3 bg-amber-50 dark:bg-amber-950 rounded-lg">
                   <CalendarCheck className="w-4 h-4 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="text-sm text-gray-900 dark:text-gray-100">Set Follow-up Reminder</p>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
+                    <p className="text-sm text-foreground">Set Follow-up Reminder</p>
+                    <p className="text-xs text-muted-foreground mt-1">
                       Follow up within 24 hours to maintain engagement
                     </p>
                   </div>
@@ -310,18 +310,18 @@ export function LeadDetailView({ lead, onBack }: LeadDetailViewProps) {
               </CardHeader>
               <CardContent className="space-y-3">
                 <div>
-                  <span className="text-sm text-gray-600">Interested Franchise</span>
-                  <p className="text-sm text-gray-900 mt-1">{lead.franchise}</p>
+                  <span className="text-sm text-muted-foreground">Interested Franchise</span>
+                  <p className="text-sm text-foreground mt-1">{lead.franchise}</p>
                 </div>
                 <div>
-                  <span className="text-sm text-gray-600">First Contact</span>
-                  <p className="text-sm text-gray-900 mt-1">
+                  <span className="text-sm text-muted-foreground">First Contact</span>
+                  <p className="text-sm text-foreground mt-1">
                     {lead.timestamp.toLocaleDateString()}
                   </p>
                 </div>
                 <div>
-                  <span className="text-sm text-gray-600">Source</span>
-                  <p className="text-sm text-gray-900 mt-1">Organic Search</p>
+                  <span className="text-sm text-muted-foreground">Source</span>
+                  <p className="text-sm text-foreground mt-1">Organic Search</p>
                 </div>
               </CardContent>
             </Card>

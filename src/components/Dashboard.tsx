@@ -26,7 +26,7 @@ import { AnalyticsScreen } from "./AnalyticsScreen";
 import { LeadsScreen } from "./LeadsScreen";
 import { MessagesScreen } from "./MessagesScreen";
 import { SettingsScreen } from "./SettingsScreen";
-import veroLogo from "figma:asset/1a29221577cf591b7faa7cb6c6c272ef9611797d.png";
+import veroLogo from "../assets/veroxlogo-removebg-preview.png";
 
 interface DashboardProps {
   onViewLead: (lead: Lead) => void;
@@ -73,27 +73,25 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
   const avgResponseTime = "12 min";
 
   return (
-    <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="flex h-screen bg-background">
       {/* Sidebar */}
-      <div className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+      <div className="w-64 bg-card border-r border-border flex flex-col">
         <div className="p-6">
           <div 
             className="flex items-center gap-3 mb-2 cursor-pointer group"
             onClick={onGoToHome}
           >
-            <div className="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center border border-gray-200 dark:border-gray-600 group-hover:border-gray-400 dark:group-hover:border-gray-400 transition-colors">
-              <img src={veroLogo} alt="VeroX AI" className="w-6 h-6" />
-            </div>
-            <h1 className="text-xl text-gray-900 dark:text-gray-100 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors">VeroX AI</h1>
+            <img src={veroLogo} alt="VeroX AI" className="w-10 h-10 group-hover:opacity-80 transition-opacity" />
+            <h1 className="text-xl text-foreground group-hover:text-foreground/80 transition-colors">VeroX AI</h1>
           </div>
-          <p className="text-sm text-gray-500 dark:text-gray-400">Owner Dashboard</p>
+          <p className="text-sm text-muted-foreground">Owner Dashboard</p>
         </div>
 
         <nav className="flex-1 px-4">
           <div className="space-y-1">
             <Button 
               variant="ghost" 
-              className={`w-full justify-start ${currentView === 'home' ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+              className={`w-full justify-start ${currentView === 'home' ? 'bg-accent' : ''}`}
               onClick={() => setCurrentView('home')}
             >
               <Home className="w-4 h-4 mr-3" />
@@ -101,7 +99,7 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
             </Button>
             <Button 
               variant="ghost" 
-              className={`w-full justify-start ${currentView === 'leads' ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+              className={`w-full justify-start ${currentView === 'leads' ? 'bg-accent' : ''}`}
               onClick={() => setCurrentView('leads')}
             >
               <Users className="w-4 h-4 mr-3" />
@@ -109,7 +107,7 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
             </Button>
             <Button 
               variant="ghost" 
-              className={`w-full justify-start ${currentView === 'analytics' ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+              className={`w-full justify-start ${currentView === 'analytics' ? 'bg-accent' : ''}`}
               onClick={() => setCurrentView('analytics')}
             >
               <BarChart3 className="w-4 h-4 mr-3" />
@@ -117,7 +115,7 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
             </Button>
             <Button 
               variant="ghost" 
-              className={`w-full justify-start ${currentView === 'messages' ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+              className={`w-full justify-start ${currentView === 'messages' ? 'bg-accent' : ''}`}
               onClick={() => setCurrentView('messages')}
             >
               <MessageSquare className="w-4 h-4 mr-3" />
@@ -125,7 +123,7 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
             </Button>
             <Button 
               variant="ghost" 
-              className={`w-full justify-start ${currentView === 'settings' ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+              className={`w-full justify-start ${currentView === 'settings' ? 'bg-accent' : ''}`}
               onClick={() => setCurrentView('settings')}
             >
               <Settings className="w-4 h-4 mr-3" />
@@ -144,8 +142,8 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
           </div>
         </nav>
 
-        <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-          <Button variant="ghost" className="w-full justify-start text-gray-600 dark:text-gray-400">
+        <div className="p-4 border-t border-border">
+          <Button variant="ghost" className="w-full justify-start text-muted-foreground">
             <LogOut className="w-4 h-4 mr-3" />
             Logout
           </Button>
@@ -155,15 +153,15 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Navigation */}
-        <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4">
+        <div className="bg-card border-b border-border px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex-1 max-w-2xl">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500" />
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <input
                   type="text"
                   placeholder="Search leads, messages, analytics..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-200 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-10 pr-4 py-2 border border-border bg-background text-foreground rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
             </div>
@@ -186,59 +184,59 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
             <div className="grid md:grid-cols-4 gap-6">
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm text-gray-600 dark:text-gray-400">Total Leads</CardTitle>
+                  <CardTitle className="text-sm text-muted-foreground">Total Leads</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <div className="text-3xl text-gray-900 dark:text-gray-100">{totalLeads}</div>
+                    <div className="text-3xl text-foreground">{totalLeads}</div>
                     <div className="flex items-center gap-1 text-sm text-emerald-600 dark:text-emerald-400">
                       <TrendingUp className="w-4 h-4" />
                       <span>12%</span>
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">+8 from last week</p>
+                  <p className="text-xs text-muted-foreground mt-2">+8 from last week</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm text-gray-600 dark:text-gray-400">Active Conversations</CardTitle>
+                  <CardTitle className="text-sm text-muted-foreground">Active Conversations</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <div className="text-3xl text-gray-900 dark:text-gray-100">{activeConversations}</div>
+                    <div className="text-3xl text-foreground">{activeConversations}</div>
                     <MessageSquare className="w-8 h-8 text-indigo-200 dark:text-indigo-700" />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">In progress</p>
+                  <p className="text-xs text-muted-foreground mt-2">In progress</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm text-gray-600 dark:text-gray-400">Conversion Rate</CardTitle>
+                  <CardTitle className="text-sm text-muted-foreground">Conversion Rate</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <div className="text-3xl text-gray-900 dark:text-gray-100">{conversionRate}%</div>
+                    <div className="text-3xl text-foreground">{conversionRate}%</div>
                     <div className="flex items-center gap-1 text-sm text-emerald-600 dark:text-emerald-400">
                       <TrendingUp className="w-4 h-4" />
                       <span>5%</span>
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Above industry avg</p>
+                  <p className="text-xs text-muted-foreground mt-2">Above industry avg</p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm text-gray-600 dark:text-gray-400">Avg Response Time</CardTitle>
+                  <CardTitle className="text-sm text-muted-foreground">Avg Response Time</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex items-center justify-between">
-                    <div className="text-3xl text-gray-900 dark:text-gray-100">{avgResponseTime}</div>
+                    <div className="text-3xl text-foreground">{avgResponseTime}</div>
                     <Clock className="w-8 h-8 text-emerald-200 dark:text-emerald-700" />
                   </div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">Excellent performance</p>
+                  <p className="text-xs text-muted-foreground mt-2">Excellent performance</p>
                 </CardContent>
               </Card>
             </div>
@@ -259,7 +257,7 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
                     <TabsContent value="kanban" className="mt-4">
                       <div className="space-y-3">
                         <div className="flex items-center justify-between text-sm">
-                          <span className="text-gray-600 dark:text-gray-400">Stage Distribution</span>
+                          <span className="text-muted-foreground">Stage Distribution</span>
                         </div>
                         {Object.entries(mockLeads.reduce((acc, lead) => {
                           acc[lead.stage] = (acc[lead.stage] || 0) + 1;
@@ -269,13 +267,13 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
                             <Badge className={getStageBadge(stage as Lead['stage'])}>
                               {stage}
                             </Badge>
-                            <div className="flex-1 bg-gray-100 dark:bg-gray-700 rounded-full h-2">
+                            <div className="flex-1 bg-muted rounded-full h-2">
                               <div 
-                                className="bg-gray-900 dark:bg-gray-100 h-2 rounded-full" 
+                                className="bg-foreground h-2 rounded-full" 
                                 style={{ width: `${(count / totalLeads) * 100}%` }}
                               ></div>
                             </div>
-                            <span className="text-sm text-gray-600 dark:text-gray-400">{count}</span>
+                            <span className="text-sm text-muted-foreground">{count}</span>
                           </div>
                         ))}
                       </div>
@@ -285,11 +283,11 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
                         {mockLeads.slice(0, 3).map(lead => (
                           <div 
                             key={lead.id} 
-                            className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"
+                            className="p-3 bg-muted rounded-lg cursor-pointer hover:bg-accent"
                             onClick={() => onViewLead(lead)}
                           >
                             <div className="flex items-center justify-between mb-1">
-                              <span className="text-sm text-gray-900 dark:text-gray-100">{lead.name}</span>
+                              <span className="text-sm text-foreground">{lead.name}</span>
                               {getQualityIcon(lead.quality)}
                             </div>
                             <Badge className={`${getStageBadge(lead.stage)} text-xs`}>
@@ -373,19 +371,19 @@ export function Dashboard({ onViewLead, onGoToConversation, onGoToHome }: Dashbo
                     {mockLeads.slice(0, 4).map(lead => (
                       <div 
                         key={lead.id}
-                        className="flex gap-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg -mx-2"
+                        className="flex gap-3 cursor-pointer hover:bg-accent p-2 rounded-lg -mx-2"
                         onClick={() => onViewLead(lead)}
                       >
                         <Avatar>
                           <AvatarFallback>{lead.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                         </Avatar>
-                        <div className="flex-1 min-w-0">
+                        <div className="flex-1 min-w-0 overflow-hidden">
                           <div className="flex items-center justify-between mb-1">
-                            <span className="text-sm text-gray-900 dark:text-gray-100 truncate">{lead.name}</span>
+                            <span className="text-sm text-foreground truncate">{lead.name}</span>
                             {getQualityIcon(lead.quality)}
                           </div>
-                          <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{lead.lastMessage}</p>
-                          <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+                          <p className="text-xs text-muted-foreground truncate">{lead.lastMessage}</p>
+                          <p className="text-xs text-muted-foreground mt-1">
                             {new Date(lead.timestamp).toLocaleDateString()}
                           </p>
                         </div>

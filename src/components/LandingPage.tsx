@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTheme } from "../lib/theme-context";
 import { motion, AnimatePresence } from "motion/react";
 import { Card, CardContent } from "./ui/card";
-import veroLogo from "figma:asset/1a29221577cf591b7faa7cb6c6c272ef9611797d.png";
+import veroLogo from "../assets/veroxlogo-removebg-preview.png";
 
 interface LandingPageProps {
   onGetStarted: () => void;
@@ -101,10 +101,7 @@ export function LandingPage({ onGetStarted, onGoToDashboard }: LandingPageProps)
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-muted/50 backdrop-blur-sm rounded-lg flex items-center justify-center border border-border">
-                <img src={veroLogo} alt="VeroX AI" className="w-8 h-8" />
-              </div>
-              <span className="text-2xl tracking-tight text-foreground">VeroX AI</span>
+              <img src={veroLogo} alt="VeroX AI" className="w-12 h-12" />
             </div>
 
             {/* Desktop Navigation */}
@@ -250,9 +247,8 @@ export function LandingPage({ onGetStarted, onGoToDashboard }: LandingPageProps)
                   ]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="w-20 h-20 bg-card rounded-xl flex items-center justify-center border border-border"
               >
-                <img src={veroLogo} alt="VeroX AI" className="w-12 h-12" />
+                <img src={veroLogo} alt="VeroX AI" className="w-20 h-20" />
               </motion.div>
             </div>
           </motion.div>
@@ -532,9 +528,7 @@ export function LandingPage({ onGetStarted, onGoToDashboard }: LandingPageProps)
       <footer className="py-12 border-t border-border bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-muted/50 rounded-lg flex items-center justify-center border border-border">
-              <img src={veroLogo} alt="VeroX AI" className="w-6 h-6" />
-            </div>
+            <img src={veroLogo} alt="VeroX AI" className="w-10 h-10" />
             <span className="text-xl text-foreground">VeroX AI</span>
           </div>
           <p className="text-muted-foreground">

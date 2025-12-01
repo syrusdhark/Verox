@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '../ui/accordion';
-import veroLogo from 'figma:asset/1a29221577cf591b7faa7cb6c6c272ef9611797d.png';
+import veroLogo from '../../assets/veroxlogo-removebg-preview.png';
 import { CursorTrail } from './CursorTrail';
 
 export function VeroHomePage() {
@@ -143,9 +143,8 @@ export function VeroHomePage() {
                   ]
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="w-32 h-32 bg-card dark:bg-white rounded-2xl flex items-center justify-center border border-border"
               >
-                <img src={veroLogo} alt="VERO" className="w-20 h-20" />
+                <img src={veroLogo} alt="VERO" className="w-32 h-32" />
               </motion.div>
               <motion.div
                 initial={{ scale: 0 }}

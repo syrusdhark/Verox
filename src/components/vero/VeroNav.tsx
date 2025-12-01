@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Button } from '../ui/button';
 import { useTheme } from '../../lib/theme-context';
-import veroLogo from 'figma:asset/1a29221577cf591b7faa7cb6c6c272ef9611797d.png';
+import veroLogo from '../../assets/veroxlogo-removebg-preview.png';
 
 type Page = 'home' | 'about' | 'investment' | 'contact' | 'stories';
 
@@ -45,9 +45,7 @@ export function VeroNav({ currentPage, onNavigate }: VeroNavProps) {
               onClick={() => handleNavigate('home')}
               className="flex items-center gap-3 hover:opacity-80 transition-opacity"
             >
-              <div className="w-12 h-12 bg-muted/50 backdrop-blur-sm rounded-lg flex items-center justify-center border border-border">
-                <img src={veroLogo} alt="VERO" className="w-8 h-8" />
-              </div>
+              <img src={veroLogo} alt="VERO" className="w-12 h-12" />
               <span className="text-2xl font-bold tracking-tight text-foreground">VERO</span>
             </button>
 

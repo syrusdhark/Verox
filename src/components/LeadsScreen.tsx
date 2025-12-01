@@ -153,10 +153,10 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
     <div className="p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl text-gray-900 dark:text-gray-100 mb-2">Leads</h1>
-          <p className="text-gray-600 dark:text-gray-400">Manage and track all your franchise leads</p>
+          <h1 className="text-2xl text-foreground mb-2">Leads</h1>
+          <p className="text-muted-foreground">Manage and track all your franchise leads</p>
         </div>
-        <Button className="bg-gray-900 hover:bg-gray-800 dark:bg-gray-100 dark:hover:bg-gray-200 text-white dark:text-gray-900">
+        <Button className="bg-foreground hover:bg-foreground/90 text-background">
           <Download className="w-4 h-4 mr-2" />
           Export Leads
         </Button>
@@ -167,11 +167,11 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Total Leads</p>
-              <p className="text-2xl text-gray-900 dark:text-gray-100">{allLeads.length}</p>
+              <p className="text-sm text-muted-foreground mb-1">Total Leads</p>
+              <p className="text-2xl text-foreground">{allLeads.length}</p>
             </div>
-            <div className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-              <Search className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+            <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center">
+              <Search className="w-6 h-6 text-muted-foreground" />
             </div>
           </div>
         </Card>
@@ -179,8 +179,8 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Hot Leads</p>
-              <p className="text-2xl text-gray-900 dark:text-gray-100">{qualityStats.hot}</p>
+              <p className="text-sm text-muted-foreground mb-1">Hot Leads</p>
+              <p className="text-2xl text-foreground">{qualityStats.hot}</p>
             </div>
             <div className="w-12 h-12 bg-red-100 dark:bg-red-950 rounded-lg flex items-center justify-center">
               <Flame className="w-6 h-6 text-red-600 dark:text-red-400" />
@@ -191,8 +191,8 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Warm Leads</p>
-              <p className="text-2xl text-gray-900 dark:text-gray-100">{qualityStats.warm}</p>
+              <p className="text-sm text-muted-foreground mb-1">Warm Leads</p>
+              <p className="text-2xl text-foreground">{qualityStats.warm}</p>
             </div>
             <div className="w-12 h-12 bg-amber-100 dark:bg-amber-950 rounded-lg flex items-center justify-center">
               <Wind className="w-6 h-6 text-amber-600 dark:text-amber-400" />
@@ -203,8 +203,8 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
         <Card className="p-4">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Cold Leads</p>
-              <p className="text-2xl text-gray-900 dark:text-gray-100">{qualityStats.cold}</p>
+              <p className="text-sm text-muted-foreground mb-1">Cold Leads</p>
+              <p className="text-2xl text-foreground">{qualityStats.cold}</p>
             </div>
             <div className="w-12 h-12 bg-blue-100 dark:bg-blue-950 rounded-lg flex items-center justify-center">
               <Snowflake className="w-6 h-6 text-blue-600 dark:text-blue-400" />
@@ -218,7 +218,7 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
         <div className="flex flex-wrap gap-4">
           <div className="flex-1 min-w-[250px]">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
                 placeholder="Search by name, email, or franchise..."
                 value={searchQuery}
@@ -276,7 +276,7 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
           </TableHeader>
           <TableBody>
             {filteredLeads.map((lead) => (
-              <TableRow key={lead.id} className="cursor-pointer hover:bg-gray-50">
+              <TableRow key={lead.id} className="cursor-pointer hover:bg-accent">
                 <TableCell>
                   <div className="flex items-center gap-3">
                     <Avatar>
@@ -285,10 +285,10 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <div className="text-sm text-gray-900 dark:text-gray-100">{lead.name}</div>
+                      <div className="text-sm text-foreground">{lead.name}</div>
                       <div className="flex items-center gap-1 mt-1">
                         {getQualityIcon(lead.quality)}
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                        <span className="text-xs text-muted-foreground">
                           {lead.intentScore}% intent
                         </span>
                       </div>
@@ -297,18 +297,18 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
                 </TableCell>
                 <TableCell>
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Mail className="w-3 h-3" />
                       {lead.email}
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <Phone className="w-3 h-3" />
                       {lead.phone}
                     </div>
                   </div>
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm text-gray-900 dark:text-gray-100">{lead.franchise}</span>
+                  <span className="text-sm text-foreground">{lead.franchise}</span>
                 </TableCell>
                 <TableCell>
                   <Badge className={getQualityBadge(lead.quality)}>
@@ -321,16 +321,16 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
                   </Badge>
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm text-gray-900 dark:text-gray-100">{lead.budget}</span>
+                  <span className="text-sm text-foreground">{lead.budget}</span>
                 </TableCell>
                 <TableCell>
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar className="w-3 h-3" />
                     {lead.timeline}
                   </div>
                 </TableCell>
                 <TableCell>
-                  <span className="text-sm text-gray-600 dark:text-gray-400">
+                  <span className="text-sm text-muted-foreground">
                     {new Date(lead.timestamp).toLocaleDateString()}
                   </span>
                 </TableCell>
@@ -351,8 +351,8 @@ export function LeadsScreen({ onViewLead }: LeadsScreenProps) {
 
       {filteredLeads.length === 0 && (
         <div className="text-center py-12">
-          <Search className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500">No leads found matching your filters</p>
+          <Search className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+          <p className="text-muted-foreground">No leads found matching your filters</p>
         </div>
       )}
     </div>

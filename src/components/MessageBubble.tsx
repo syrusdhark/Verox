@@ -1,6 +1,6 @@
 import { Message } from "../lib/mock-data";
 import { Sparkles, User } from "lucide-react";
-import veroLogo from "figma:asset/1a29221577cf591b7faa7cb6c6c272ef9611797d.png";
+import veroLogo from "../assets/veroxlogo-removebg-preview.png";
 
 interface MessageBubbleProps {
   message: Message;
